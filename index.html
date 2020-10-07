@@ -10,7 +10,30 @@
 <body>
 
     <script>
+        function crearVehiculo(nombre, velocidadMaxima, tieneRuedas, tieneMotor) {
+            let obj = {
+                nombre: nombre,
+                velocidadMaxima: velocidadMaxima,
+                tieneRuedas: tieneRuedas,
+                tieneMotor: tieneMotor,
+                encenderRadio: function () {
+                    console.log(`Radio encendida de vehiculo ${this.nombre}`);
+                }
+            };
+            return obj;
 
+        }
+
+        var coche = crearVehiculo('coche', 300, true, true);
+        var carromato = crearVehiculo('carromato', 45, true, false);
+
+        console.log('Nombre de vehiculos');
+        console.log(coche.nombre);
+        console.log(carromato.nombre);
+
+        console.log('Enciende las radios');
+        coche.encenderRadio();
+        carromato.encenderRadio();
     </script>
 </body>
 
