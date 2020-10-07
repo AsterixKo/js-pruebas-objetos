@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-pruebas-objetos</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Creacion de objetos con la convención estandar con new Object
+        function Vehiculo(_nombre, _velocidadMaxima, _tieneRuedas, _tieneMotor) {
+            let obj = {
+                nombre: _nombre,
+                velocidadMaxima: _velocidadMaxima,
+                tieneRuedas: _tieneRuedas,
+                tieneMotor: _tieneMotor,
+                encenderRadio: function () {
+                    console.log(`Radio encendida de vehiculo ${this.nombre}`);
+                }
+            };
+            return obj;
+
+        }
+
+        var coche = new Vehiculo('coche', 300, true, true);
+        var carromato = new Vehiculo('carromato', 45, true, false);
+
+        console.log('Nombre de vehiculos');
+        console.log(coche.nombre);
+        console.log(carromato.nombre);
+
+        console.log('Enciende las radios');
+        coche.encenderRadio();
+        carromato.encenderRadio();
+    </script>
+</body>
+
+</html>
