@@ -10,12 +10,12 @@
 <body>
 
     <script>
-        function crearVehiculo(nombre, velocidadMaxima, tieneRuedas, tieneMotor) {
+        function crearVehiculo(_nombre, _velocidadMaxima, _tieneRuedas, _tieneMotor) {
             let obj = {
-                nombre: nombre,
-                velocidadMaxima: velocidadMaxima,
-                tieneRuedas: tieneRuedas,
-                tieneMotor: tieneMotor,
+                nombre: _nombre,
+                velocidadMaxima: _velocidadMaxima,
+                tieneRuedas: _tieneRuedas,
+                tieneMotor: _tieneMotor,
                 encenderRadio: function () {
                     console.log(`Radio encendida de vehiculo ${this.nombre}`);
                 }
