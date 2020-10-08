@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+
+<body>
+    <script>
+        function Person() {
+            let obj = {
+                altura: 1.90,
+                peso: 80,
+                color: 'negro',
+                habitos: ['correr', 'coser', 'cantar']
+            };
+
+            return obj;
+        }
+
+        let person1 = new Person();
+        console.log(person1.__proto__);//accedemos al padre
+
+        //Agregar método al "padre"/clase mediannte la instancia del objeto.
+        person1.__proto__.traerHabitos = function () {
+            return person1.habitos;
+        };
+
+        console.log(person1.traerHabitos());
+        console.log(person1.__proto__.traerHabitos());
+
+        //Accediendo al padre desde el constructor
+        console.log(Person.prototype);
+        
+        Person.prototype.elMetodoDeJavierGarcia = function (){
+            alert('Hola');
+        };
+
+        console.log(Person.prototype);
+        // Person.prototype.elMetodoDeJavierGarcia();//funciona
+        // person1.elMetodoDeJavierGarcia(); //no funciona
+        // person1.__proto__.elMetodoDeJavierGarcia();//no funciona
+    </script>
+</body>
+
+</html>
